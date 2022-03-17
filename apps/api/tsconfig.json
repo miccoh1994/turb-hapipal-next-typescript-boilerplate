@@ -1,8 +1,24 @@
 {
-  "extends": "tsconfig/base.json",
-  "include": ["**/*.ts", "hapi-pal.d.d.ts"],
+  "include": ["**/*.ts", "hapi-pal.d.d.ts", "lib/plugins/@hapipal.schwifty.js"],
   "exclude": ["node_modules"],
+  "ts-node": {
+    "files": true
+  },
+  "files": ["server/index.ts", "hapi-pal.d.ts"],
   "compilerOptions": {
+    "target": "ES6",
+    "composite": false,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": false,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "strict": true,
     "resolveJsonModule": true
   }
 }

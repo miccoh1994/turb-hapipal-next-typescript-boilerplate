@@ -1,5 +1,5 @@
 export default {
   options: {
-    migrationsDir: `${__dirname}/../migrations`,
+    migrationsDir: `${__dirname}../../../../packages/db/migrations`,
   },
 };

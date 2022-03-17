@@ -4,20 +4,24 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "node server",
+    "start": "node dist/server",
+    "dev": "nodemon --exec \"node -r esbuild-register ./server/index.ts\" -e .ts",
+    "build": "tsc --outDir ./dist",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "test": "lab -a @hapi/code -L",
     "lint": "eslint ."
   },
   "dependencies": {
     "@hapi/boom": "9.x.x",
     "@hapipal/haute-couture": "4.x.x",
-    "joi": "17.x.x"
+    "joi": "17.x.x",
+    "mysql2": "^2.3.3"
   },
   "devDependencies": {
     "@hapi/code": "8.x.x",
     "@hapi/eslint-config-hapi": "13.x.x",
     "@hapi/eslint-plugin-hapi": "4.x.x",
-    "@hapi/glue": "8.x.x",
+    "@hapi/glue": "^8.0.0",
     "@hapi/hapi": "20.x.x",
     "@hapi/lab": "24.x.x",
     "@hapipal/confidence": "6.x.x",
@@ -31,9 +35,16 @@
     "@hapipal/types-schmervice": "^0.0.1-alpha.0",
     "@hapipal/types-schwifty": "^0.0.1-alpha.0",
     "@hapipal/types-toys": "^0.0.0",
+    "@types/hapi__glue": "^6.1.5",
+    "@types/uuid": "^8.3.4",
     "babel-eslint": "10.x.x",
     "dotenv": "8.x.x",
+    "esbuild-register": "^3.3.2",
     "eslint": "7.x.x",
-    "exiting": "6.x.x"
+    "exiting": "6.x.x",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "ts-node-dev": "^1.1.8",
+    "uuid": "^8.3.2"
   }
 }
