@@ -1,0 +1,8 @@
+{
+  "extends": "tsconfig/base.json",
+  "include": ["**/*.ts", "hapi-pal.d.d.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "resolveJsonModule": true
+  }
+}
